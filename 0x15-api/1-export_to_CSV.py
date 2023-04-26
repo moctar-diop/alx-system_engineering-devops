@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     for i in data2:
         if i['id'] == int(argv[1]):
-            employee = i['username']
+            employee = i['USERNAME']
 
     with open(argv[1] + '.csv', 'w', newline='') as file:
         writ = csv.writer(file, quoting=csv.QUOTE_ALL)
@@ -26,10 +26,10 @@ if __name__ == "__main__":
         for i in data:
 
             row = []
-            if i['userId'] == int(argv[1]):
-                row.append(i['userId'])
+            if i['USER_ID'] == int(argv[1]):
+                row.append(i['USER_ID'])
                 row.append(employee)
-                row.append(i['completed'])
-                row.append(i['title'])
+                row.append(i['TASK_COMPLETED_STATUS'])
+                row.append(i['TASK_TITLE'])
 
                 writ.writerow(row)
